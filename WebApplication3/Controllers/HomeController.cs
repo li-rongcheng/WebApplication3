@@ -5,14 +5,49 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Models;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult IndexAsync()
         {
-            //HttpContext.Authentication
+            return View();
+        }
+
+        private async Task<IActionResult> Foo()
+        {
+            #region 仅仅想看一下 this 里有哪些有用的东西
+            var ctx = this.Request.Cookies;
+            var identies = this.User.Identities;
+            var features = this.HttpContext.Features;
+            #endregion
+
+            #region 简单的硬编码登录例子
+            const string Issuer = "https://gov.uk";
+
+            var claims = new List<Claim> {
+                new Claim(ClaimTypes.Name, "Andrew", ClaimValueTypes.String, Issuer),
+                new Claim(ClaimTypes.Surname, "Lock", ClaimValueTypes.String, Issuer),
+                new Claim(ClaimTypes.Country, "UK", ClaimValueTypes.String, Issuer),
+                new Claim("ChildhoodHero", "Ronnie James Dio", ClaimValueTypes.String)
+            };
+
+            var userIdentity = new ClaimsIdentity(claims, "Passport");
+
+            var userPrincipal = new ClaimsPrincipal(userIdentity);
+
+            await HttpContext.SignInAsync("Cookie", userPrincipal,
+                new AuthenticationProperties
+                {
+                    ExpiresUtc = DateTime.UtcNow.AddMinutes(20),
+                    IsPersistent = false,
+                    AllowRefresh = false
+                });
+            #endregion
+
             return View();
         }
 
