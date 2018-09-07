@@ -12,6 +12,7 @@ namespace WebApplication3.Controllers
     {
         public IActionResult Index()
         {
+            //HttpContext.Authentication
             return View();
         }
 
