@@ -38,13 +38,6 @@ namespace WebApplication3
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            // need to install Microsoft.AspNetCore.Authentication.OpenIdConnect
-            //services.AddOpenIdConnectionAuthentication(o =>
-            //{
-            //    o.ClientId = Configuration["oidc:clientid"];
-            //    o.ClientSecret = Configuration["oidc:clientsecret"]);
-            //};
-
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
