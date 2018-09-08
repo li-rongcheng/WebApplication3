@@ -21,8 +21,14 @@ namespace WebApplication3.Controllers
         {
             #region 仅仅想看一下 this 里有哪些有用的东西
             var ctx = this.Request.Cookies;
+            var hasFormContentType = this.Request.HasFormContentType;
+            var statusCode = this.Response.StatusCode;
+
             var identies = this.User.Identities;
+            var identity = this.User.Identity;
+
             var features = this.HttpContext.Features;
+            var tempdata = this.TempData;
             #endregion
 
             #region 简单的硬编码登录例子

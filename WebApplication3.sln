@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication3", "WebApplication3\WebApplication3.csproj", "{AD321D4C-252A-4255-8452-7862E0845B17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorClassLib1", "RazorClassLib1\RazorClassLib1.csproj", "{A7BA835D-B442-45E9-9011-CA4B4678BDB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorClassLib1", "RazorClassLib1\RazorClassLib1.csproj", "{A7BA835D-B442-45E9-9011-CA4B4678BDB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppMvc", "WebAppMvc\WebAppMvc.csproj", "{63D85224-85AA-48FA-888F-D7C16E4141A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A7BA835D-B442-45E9-9011-CA4B4678BDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7BA835D-B442-45E9-9011-CA4B4678BDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7BA835D-B442-45E9-9011-CA4B4678BDB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D85224-85AA-48FA-888F-D7C16E4141A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D85224-85AA-48FA-888F-D7C16E4141A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D85224-85AA-48FA-888F-D7C16E4141A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D85224-85AA-48FA-888F-D7C16E4141A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
