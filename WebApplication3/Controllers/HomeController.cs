@@ -12,7 +12,7 @@ namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult IndexAsync()
+        public IActionResult Index()
         {
             return View();
         }
