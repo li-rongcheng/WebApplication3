@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Models;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
 namespace WebApplication3.Controllers
 {
@@ -55,6 +58,23 @@ namespace WebApplication3.Controllers
             #endregion
 
             return View();
+        }
+
+        private string GenerateJwtToken(string secret, string userId, int expireDays)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, userId)
+                }),
+                Expires = DateTime.UtcNow.AddDays(expireDays),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
 
         public IActionResult About()
