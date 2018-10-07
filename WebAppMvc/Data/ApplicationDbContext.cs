@@ -6,8 +6,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebAppMvc.Data
 {
+    public class SomeThing
+    {
+        public string SomeThingId { get; set; }
+        public string Name { get; set; }
+    }
+
     public class ApplicationDbContext : IdentityDbContext
     {
+        public DbSet<SomeThing> SomeThings { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
