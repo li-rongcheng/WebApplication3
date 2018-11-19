@@ -12,6 +12,9 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication3.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MediatR;
+using MediatR.Pipeline;
+using WebApplication3.MediatrExperiment;
 
 namespace WebApplication3
 {
@@ -27,6 +30,19 @@ namespace WebApplication3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // services.AddScoped(typeof(IRequestPreProcessor<>), typeof(PingPipelinePreProcess<>));
+            services.AddMediatR();
+
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior2<,>));
+            services.AddScoped<IPipelineBehavior<Ping, string>, PingPipelineBehavior>();
+
+            // services.AddTransient<IRequestPreProcessor, PingPipelinePreProcess<Ping>>();
+
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));   // for IRequestPreProcessor
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));  // for IRequestPostProcessor
+            //services.AddScoped(typeof(IRequestPreProcessor<>), typeof(GenericRequestPreProcessor<>));   // not working
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
