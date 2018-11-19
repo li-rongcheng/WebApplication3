@@ -6,12 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="mediatr" Version="5.1.0" />
+    <PackageReference Include="mediatr.extensions.microsoft.dependencyinjection" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RazorClassLib1\RazorClassLib1.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
 
 </Project>
