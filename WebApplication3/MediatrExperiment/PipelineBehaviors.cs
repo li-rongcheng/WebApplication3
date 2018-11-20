@@ -1,6 +1,7 @@
 
 using System.Threading;
 using System.Threading.Tasks;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -43,6 +44,7 @@ namespace WebApplication3.MediatrExperiment
     public class PingPipelineBehavior : IPipelineBehavior<Ping, string>
     {
         private readonly ILogger _logger;
+
         public PingPipelineBehavior(ILogger<PingPipelineBehavior> logger)
         {
             _logger = logger;
@@ -50,9 +52,9 @@ namespace WebApplication3.MediatrExperiment
 
         public async Task<string> Handle(Ping request, CancellationToken cancellationToken, RequestHandlerDelegate<string> next)
         {
-            _logger.LogError($">>> Start to handle {typeof(PingPipelineBehavior).Name}");
+            _logger.LogInformation($">>> Start to handle {typeof(PingPipelineBehavior).Name}");
             var response = await next();
-            _logger.LogError($"<<< End of Handling {typeof(PingPipelineBehavior).Name}");
+            _logger.LogInformation($"<<< End of Handling {typeof(PingPipelineBehavior).Name}");
             return response;
         }
     }

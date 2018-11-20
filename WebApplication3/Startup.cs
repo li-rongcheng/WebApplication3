@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using MediatR.Pipeline;
 using WebApplication3.MediatrExperiment;
+using FluentValidation.AspNetCore;
 
 namespace WebApplication3
 {
@@ -35,6 +36,7 @@ namespace WebApplication3
 
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior2<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             services.AddScoped<IPipelineBehavior<Ping, string>, PingPipelineBehavior>();
 
             // services.AddTransient<IRequestPreProcessor, PingPipelinePreProcess<Ping>>();
@@ -57,7 +59,9 @@ namespace WebApplication3
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc( options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<WebApplication3.Startup>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
