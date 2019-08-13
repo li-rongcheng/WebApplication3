@@ -16,6 +16,8 @@ using MediatR;
 using MediatR.Pipeline;
 using WebApplication3.MediatrExperiment;
 using FluentValidation.AspNetCore;
+using WebApplication3.Experiments;
+using WebApplication3.MediatrExperiment.PipelineBehaviors;
 
 namespace WebApplication3
 {
@@ -34,16 +36,18 @@ namespace WebApplication3
             // services.AddScoped(typeof(IRequestPreProcessor<>), typeof(PingPipelinePreProcess<>));
             services.AddMediatR();
 
+            // services.AddTransient<IRequestPreProcessor, PingPipelinePreProcess<Ping>>();
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));   // for IRequestPreProcessor
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));  // for IRequestPostProcessor
+            //services.AddScoped(typeof(IRequestPreProcessor<>), typeof(GenericRequestPreProcessor<>));   // not working
+
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior2<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             services.AddScoped<IPipelineBehavior<Ping, string>, PingPipelineBehavior>();
 
-            // services.AddTransient<IRequestPreProcessor, PingPipelinePreProcess<Ping>>();
-
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));   // for IRequestPreProcessor
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));  // for IRequestPostProcessor
-            //services.AddScoped(typeof(IRequestPreProcessor<>), typeof(GenericRequestPreProcessor<>));   // not working
+            services.AddTransient<IDiMultiImpl, DiMultiImpl1>();
+            services.AddTransient<IDiMultiImpl, DiMultiImpl2>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {

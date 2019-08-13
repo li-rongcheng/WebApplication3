@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 
-namespace WebApplication3.MediatrExperiment
+namespace WebApplication3.MediatrExperiment.PipelineBehaviors
 {
     public class RequestValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
@@ -78,6 +78,7 @@ namespace WebApplication3.MediatrExperiment
         }
     }
 
+    /** [MCN] This is a global exception filter */
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
     {
