@@ -5,7 +5,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace WebApplication3.MediatrExperiment
+namespace WebApplication3.MediatrExperiment.PipelineBehaviors
 {
     public class LoggingBehavior2<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> 
     {

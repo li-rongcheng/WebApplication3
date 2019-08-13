@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
 
-namespace WebApplication3.MediatrExperiment
+namespace WebApplication3.MediatrExperiment.PipelineBehaviors
 {
     public class GenericRequestPreprocessor2<T> : IRequestPreProcessor<T>
     {

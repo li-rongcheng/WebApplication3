@@ -33,19 +33,29 @@ namespace WebApplication3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // services.AddScoped(typeof(IRequestPreProcessor<>), typeof(PingPipelinePreProcess<>));
             services.AddMediatR();
 
-            // services.AddTransient<IRequestPreProcessor, PingPipelinePreProcess<Ping>>();
+            /** [MCN] IPipelineBehavior<> will be invoked by their registration order
+             * 
+             * Note that IRequestPreProcessor<> and IRequestPostProcessor<> must be registered to
+             * IPipelineBehavior<> using RequestPreProcessorBehavior<> & RequestPostProcessorBehavior<>.
+             * 
+             * Statement like the following ways won't work:
+             * 
+             *     services.AddScoped(typeof(IRequestPreProcessor<>), typeof(GenericRequestPreProcessor<>));
+             *     services.AddTransient<IRequestPreProcessor, PingPipelinePreProcess<Ping>>();
+             *     services.AddScoped(typeof(IRequestPreProcessor<>), typeof(PingPipelinePreProcess<>));
+             */
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));   // for IRequestPreProcessor
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));  // for IRequestPostProcessor
-            //services.AddScoped(typeof(IRequestPreProcessor<>), typeof(GenericRequestPreProcessor<>));   // not working
 
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior2<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+
             services.AddScoped<IPipelineBehavior<Ping, string>, PingPipelineBehavior>();
 
+            /** [MCN] register multiple impls to the same interface then inject to an IEnumerable */
             services.AddTransient<IDiMultiImpl, DiMultiImpl1>();
             services.AddTransient<IDiMultiImpl, DiMultiImpl2>();
 
