@@ -22,7 +22,7 @@ namespace WebApplication3.Controllers
 
         private async Task<IActionResult> Foo()
         {
-            #region 仅仅想看一下 this 里有哪些有用的东西
+            #region [MCN] 仅仅想看一下 this 里有哪些有用的东西
             var ctx = this.Request.Cookies;
             var hasFormContentType = this.Request.HasFormContentType;
             var statusCode = this.Response.StatusCode;
@@ -34,7 +34,7 @@ namespace WebApplication3.Controllers
             var tempdata = this.TempData;
             #endregion
 
-            #region 简单的硬编码登录例子
+            #region [MCN] 简单的硬编码登录例子
             const string Issuer = "https://gov.uk";
 
             var claims = new List<Claim> {
@@ -60,6 +60,7 @@ namespace WebApplication3.Controllers
             return View();
         }
 
+        /** [MCN] GenerateJwtToken() */
         private string GenerateJwtToken(string secret, string userId, int expireDays)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
