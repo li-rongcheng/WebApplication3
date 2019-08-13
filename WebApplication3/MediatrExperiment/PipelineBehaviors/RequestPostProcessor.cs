@@ -6,7 +6,7 @@ namespace WebApplication3.MediatrExperiment.PipelineBehaviors
 {
     public class GenericRequestPostProcessor<TRequest, TResponse> : IRequestPostProcessor<TRequest, TResponse>
     {
-        ILogger _logger;
+        readonly ILogger _logger;
 
         public GenericRequestPostProcessor(ILogger<GenericRequestPostProcessor<TRequest, TResponse>> logger)
         {

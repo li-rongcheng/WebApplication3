@@ -6,6 +6,8 @@ using FluentValidation;
 using MediatR;
 using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
+using WebApplication3.MediatrExperiment.PipelineBehaviors;
+//using WebApplication3.MediatrExperiment.PipelineBehaviors;
 
 namespace WebApplication3.MediatrExperiment
 {
@@ -16,8 +18,8 @@ namespace WebApplication3.MediatrExperiment
     
     public class PingHandler : IRequestHandler<Ping, string>
     {
-        ILogger _logger;
-        IValidator<Ping> _validator;
+        readonly ILogger _logger;
+        readonly IValidator<Ping> _validator;
 
         public PingHandler(ILogger<PingHandler> logger, IValidator<Ping> validator)
         {
@@ -36,7 +38,7 @@ namespace WebApplication3.MediatrExperiment
                 }
 
                 var failures = results.Errors.ToList();
-                throw new ValidationException(failures);
+                throw new MyValidationException(failures, _logger);
             }
 
             _logger.LogDebug("Executing PingHandler.Handle() ...");

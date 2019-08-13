@@ -7,7 +7,7 @@ namespace WebApplication3.MediatrExperiment.PipelineBehaviors
 {
     public class GenericRequestPreprocessor2<T> : IRequestPreProcessor<T>
     {
-        ILogger _logger;
+        readonly ILogger _logger;
 
         public GenericRequestPreprocessor2(ILogger<GenericRequestPreprocessor2<T>> logger)
         {
@@ -23,7 +23,7 @@ namespace WebApplication3.MediatrExperiment.PipelineBehaviors
 
     public class GenericRequestPreProcessor<TRequest> : IRequestPreProcessor<TRequest>
     {
-        ILogger _logger;
+        readonly ILogger _logger;
 
         public GenericRequestPreProcessor(ILogger<GenericRequestPreProcessor<TRequest>> logger)
         {

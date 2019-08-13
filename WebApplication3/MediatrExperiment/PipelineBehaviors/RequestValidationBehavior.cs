@@ -28,7 +28,9 @@ namespace WebApplication3.MediatrExperiment.PipelineBehaviors
 
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
-            var context = new ValidationContext(request);
+            _logger.LogTrace("RequestValidationBehavior.Handle() called");
+
+           var context = new ValidationContext(request);
 
             var failures = _validators
                 .Select(v => v.Validate(context))
@@ -45,21 +47,21 @@ namespace WebApplication3.MediatrExperiment.PipelineBehaviors
         }
     }
 
-    public class ValidationException : Exception
+    public class MyValidationException : Exception
     {
-        private readonly ILogger logger;
+        private readonly ILogger _logger;
         public IDictionary<string, string[]> Failures { get; }
 
-        public ValidationException()
+        public MyValidationException()
             : base("One or more validation failures have occurred.")
         {
             Failures = new Dictionary<string, string[]>();
         }
 
-        public ValidationException(List<ValidationFailure> failures, ILogger logger)
+        public MyValidationException(List<ValidationFailure> failures, ILogger logger)
             : this()
         {
-            this.logger = logger;
+            this._logger = logger;
             var propertyNames = failures
                 .Select(e => e.PropertyName)
                 .Distinct();
@@ -73,7 +75,7 @@ namespace WebApplication3.MediatrExperiment.PipelineBehaviors
 
                 Failures.Add(propertyName, propertyFailures);
                 foreach(var error in propertyFailures)
-                    logger.LogError($"{propertyName} validation failed: {error}");
+                    _logger.LogError($"{propertyName} validation failed: {error}");
             }
         }
     }
@@ -82,7 +84,7 @@ namespace WebApplication3.MediatrExperiment.PipelineBehaviors
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
     {
-        ILogger _logger;
+        readonly ILogger _logger;
         public CustomExceptionFilterAttribute(ILogger<CustomExceptionFilterAttribute> logger)
         {
             _logger = logger;
@@ -92,11 +94,11 @@ namespace WebApplication3.MediatrExperiment.PipelineBehaviors
         {
             _logger.LogError("$--------- OnException() called ---------$");
 
-            if (context.Exception is ValidationException)
+            if (context.Exception is MyValidationException)
             {
                 context.HttpContext.Response.ContentType = "application/json";
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                context.Result = new JsonResult(((ValidationException)context.Exception).Failures);
+                context.Result = new JsonResult(((MyValidationException)context.Exception).Failures);
 
                 return;
             }

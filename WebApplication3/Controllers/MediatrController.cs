@@ -11,8 +11,8 @@ namespace WebApplication3.controllers
 {
     public class MediatrController : Controller
     {
-        IMediator _mediator; 
-        IEnumerable<IDiMultiImpl> _impls;
+        readonly IMediator _mediator;
+        readonly IEnumerable<IDiMultiImpl> _impls;
         public MediatrController(IMediator mediator, IEnumerable<IDiMultiImpl> impls)
         {
             _mediator = mediator;
