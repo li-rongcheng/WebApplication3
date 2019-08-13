@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="fluentvalidation.aspnetcore" Version="8.0.100" />
+    <PackageReference Include="GraphQL" Version="2.4.0" />
     <PackageReference Include="mediatr" Version="5.1.0" />
     <PackageReference Include="mediatr.extensions.microsoft.dependencyinjection" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
