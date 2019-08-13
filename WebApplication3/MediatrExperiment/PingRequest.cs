@@ -36,7 +36,7 @@ namespace WebApplication3.MediatrExperiment
                 }
 
                 var failures = results.Errors.ToList();
-                throw new ValidationException(failures, _logger);
+                throw new ValidationException(failures);
             }
 
             _logger.LogDebug("Executing PingHandler.Handle() ...");

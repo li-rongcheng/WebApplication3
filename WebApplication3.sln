@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication3", "WebAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorClassLib1", "RazorClassLib1\RazorClassLib1.csproj", "{A7BA835D-B442-45E9-9011-CA4B4678BDB0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvc", "WebAppMvc\WebAppMvc.csproj", "{63D85224-85AA-48FA-888F-D7C16E4141A7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9F4614B-84D0-4945-BEAE-C0FD78222A2D}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
@@ -28,10 +26,6 @@ Global
 		{A7BA835D-B442-45E9-9011-CA4B4678BDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7BA835D-B442-45E9-9011-CA4B4678BDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7BA835D-B442-45E9-9011-CA4B4678BDB0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63D85224-85AA-48FA-888F-D7C16E4141A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63D85224-85AA-48FA-888F-D7C16E4141A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63D85224-85AA-48FA-888F-D7C16E4141A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63D85224-85AA-48FA-888F-D7C16E4141A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
