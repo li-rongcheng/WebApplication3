@@ -18,6 +18,11 @@ using WebApplication3.MediatrExperiment;
 using FluentValidation.AspNetCore;
 using WebApplication3.Experiments;
 using WebApplication3.MediatrExperiment.PipelineBehaviors;
+using WebApplication3.Data.Repositories;
+using GraphQL;
+using WebApplication3.GraphQL.GraphQLSchema;
+using GraphQL.Server;
+using GraphQL.Server.Ui.Playground;
 
 namespace WebApplication3
 {
@@ -33,6 +38,17 @@ namespace WebApplication3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IOwnerRepository, OwnerRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
+
+            services.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(s.GetRequiredService));
+            services.AddScoped<AppSchema>();
+
+            services.AddGraphQL(o => { o.ExposeExceptions = false; })
+                    .AddGraphTypes(ServiceLifetime.Scoped);
+
+            // =======================================================
+
             services.AddMediatR();
 
             /** [MCN] IPipelineBehavior<> will be invoked by their registration order
@@ -97,6 +113,9 @@ namespace WebApplication3
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+
+            app.UseGraphQL<AppSchema>();
+            app.UseGraphQLPlayground(options: new GraphQLPlaygroundOptions());
 
             app.UseMvc(routes =>
             {
