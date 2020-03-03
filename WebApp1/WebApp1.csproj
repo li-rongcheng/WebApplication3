@@ -19,8 +19,4 @@
     <Folder Include="Areas\RLTestArea\Models\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\RazorClassLib1\RazorClassLib1.csproj" />
-  </ItemGroup>
-
 </Project>
