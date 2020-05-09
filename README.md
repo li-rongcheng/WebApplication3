@@ -19,33 +19,42 @@ Search [MCN] for all mcn noes
 ## Projects
 
 
-## WebApplication3 (.net core 2.0)
+### WebApplication3 (.net core 2.2)
 
-- depends on RazorClassLib1 (netstandard2.0)
-- Authentication (login), search "¼òµ¥µÄÓ²±àÂëµÇÂ¼Àı×Ó"
+- Depends on: RazorClassLib1 (netstandard2.0)
+
+- Authentication (login), search "ç®€å•çš„ç¡¬ç¼–ç ç™»å½•ä¾‹å­"
+
 - MediatR, FluentValidation, see:
-  - MediatrController.cs
+  - MediatrController.cs, will output some error logging messages (just for demo)
   - files in MediatrExperiment/
-- Registering multiple impls to the same interface, see:
-  `Experiments/DiMultiImpl.cs`
+
+- Registering multiple impls to the same interface, see: `Experiments/DiMultiImpl.cs`
+
 - GraphQL Demo
   - Playground URL: https://localhost:5001/ui/playground
 
-## WebApp1 (.net core 3.0)
+### WebApp1 (.net core 3.0)
 
-- Areas routing: WebApp1
+- Areas routing: /RLTestArea
 
-## WebApp2 (.net core 3.0)
+### WebApp2 (.net core 3.0)
 
-- Depend on RazorClassLib3 (.net core 3.0)
-- RCL razor pages (via dependency to RazorClassLib3) 
+- Depends on: RazorClassLib3 (.net core 3.0)
+- Demo: can use Areas in RCL even if razor pages enabled (which conflict native areas routing)
 
-## Others
+### RazorClassLib1
 
-RazorClassLib2 
+- netstandard2.0, based on razor langage 3.0 of .net core 3.0
+- Demo: Areas in RCL
+- Referred by: WebApplication3 & WebApp2
+
+### RazorClassLib2
+
 - netstandard2.0, based on razor langage 3.0 of .net core 3.0
 - blazor (razor component)
 
-BlazorApp1
+### BlazorApp1
+
 - netcoreapp3.0
 - Blazor server
