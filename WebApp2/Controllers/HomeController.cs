@@ -33,5 +33,10 @@ namespace WebApp2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Blazor()
+        {
+            return View("_Host");
+        }
     }
 }
