@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp2", "WebApp2\WebApp2.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp3RazorPages", "WebApp3RazorPages\WebApp3RazorPages.csproj", "{9EED7C1D-7BB9-472B-B6A6-59DF04CA8AB5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{967E21B5-4683-465A-B4A7-85D2E3DD110A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7BA835D-B442-45E9-9011-CA4B4678BDB0} = {967E21B5-4683-465A-B4A7-85D2E3DD110A}
+		{4C4A5B44-9A72-4026-B993-D3FB36271A43} = {967E21B5-4683-465A-B4A7-85D2E3DD110A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B3D3FEF-2859-4CDF-B812-E32BDEA14C80}
