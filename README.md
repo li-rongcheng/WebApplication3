@@ -18,7 +18,6 @@ Search [MCN] for all mcn noes
 
 ## Projects
 
-
 ### WebApplication3 (.net core 2.2)
 
 - Depends on: RazorClassLib1 (netstandard2.0)
@@ -36,25 +35,36 @@ Search [MCN] for all mcn noes
 
 ### WebApp1 (.net core 3.0)
 
-- Areas routing: /RLTestArea
+- Demo: Areas routing: /RLTestArea
 
-### WebApp2 (.net core 3.0)
+### WebApp2 (.net core 3.1)
 
-- Depends on: RazorClassLib3 (.net core 3.0)
-- Demo: can use Areas in RCL even if razor pages enabled (which conflict native areas routing)
+- Target Framework: .net core 3.1 (upgraded from .net core 3.0)
+- Depends on: RazorClassLib1, RazorClassLib2
+- Demo:
+  - Use Areas in RCL even if razor pages enabled (which conflicts with native areas routing)
+  - Integrate razor pages with MVC
+  - Integrate server side blazor (razor component) for razor pages and MVC
 
-### RazorClassLib1
+### WebApp3RazorPages (.net core 3.1)
 
-- netstandard2.0, based on razor langage 3.0 of .net core 3.0
+- Depends on: RazorClassLib2
+- Blazor enabled, test link: https://localhost:5001/counter
+
+### RazorClassLib1 (netstandard2.0, pages)
+
+- Based on razor langage 3.0 of .net core 3.0
 - Demo: Areas in RCL
 - Referred by: WebApplication3 & WebApp2
 
-### RazorClassLib2
+### RazorClassLib2 (netstandard2.0, blazor)
 
-- netstandard2.0, based on razor langage 3.0 of .net core 3.0
-- blazor (razor component)
+- Based on razor langage 3.0 of .net core 3.0
+- demo: blazor (razor component)
+- Referred By: WebApp2, WebApp3RazorPages, BlazorApp1
 
-### BlazorApp1
+### BlazorApp1 (.net core 3.0)
 
-- netcoreapp3.0
+- Target Framework: netcoreapp3.0
+- Depends On: RazorClassLib2
 - Blazor server
