@@ -65,6 +65,9 @@ Search [MCN] for all mcn noes
 
 ### BlazorApp1 (.net core 3.0)
 
-- Target Framework: netcoreapp3.0
 - Depends On: RazorClassLib2
 - Blazor server
+- Demo:
+  - Internal razor component RLTestComponent
+  - External razor components in RCL project RazorClassLib2
+  - RazorClassLib2.Component2 parameters
