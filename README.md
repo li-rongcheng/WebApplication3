@@ -75,11 +75,15 @@ Blazor WebAssembly app with:
 - Asp.net core host enabled (so there are 3 sub-projects for client, server and shared)
 - PWA & Auth disabled
 
+No demo applied so far
+
 ### BlazorWebAssembply2PWA
 
 Blazor WebAssembly app with:
 - PWA enabled
 - Auth & Asp.net core host disabled
+
+No demo applied so far
 
 ## Lib Projects
 
