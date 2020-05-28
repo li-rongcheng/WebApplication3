@@ -67,6 +67,20 @@ Demo:
     - See: [Integrate ASP.NET Core Razor components into Razor Pages and MVC apps | Microsoft Docs](https://docs.microsoft.com/en-us/aspnet/core/blazor/integrate-components?view=aspnetcore-3.1)
     - Visit: https://localhost:5001/counter
 
+## WebAssembly Projects
+
+### BlazorWebAssembly3AuthCoreHost
+
+Blazor WebAssembly app with:
+- Asp.net core host enabled (so there are 3 sub-projects for client, server and shared)
+- PWA & Auth disabled
+
+### BlazorWebAssembply2PWA
+
+Blazor WebAssembly app with:
+- PWA enabled
+- Auth & Asp.net core host disabled
+
 ## Lib Projects
 
 ### RazorClassLib1 (netstandard2.0, pages)
