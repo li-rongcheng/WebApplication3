@@ -32,7 +32,9 @@ Demo:
 
 ### WebApp1 (.net core 3.0)
 
-- Demo: Areas routing: /RLTestArea
+Demo:
+- Areas routing: /RLTestArea
+- Electron.NET
 
 ### WebApp2 (.net core 3.1)
 
