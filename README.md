@@ -30,7 +30,7 @@ Demo:
   - Internal razor component RLTestComponent
   - External razor components in RCL project RazorClassLib2
   - RazorClassLib2.Component2 parameters
-  - MatBlazor
+  - MatBlazor (server side)
 
 ### BlazorApp2 (.net core 3.1)
 
@@ -89,7 +89,8 @@ Blazor WebAssembly app with:
 - Asp.net core host enabled (so there are 3 sub-projects for client, server and shared)
 - PWA & Auth disabled
 
-No demo applied
+Demo:
+- MatBlazor (client side)
 
 ### BlazorWebAssembply2PWA
 
