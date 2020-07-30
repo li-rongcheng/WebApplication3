@@ -5,3 +5,42 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<MatSlider @bind-Value="@Val"></MatSlider>
+<MatAutocompleteList Items="@options" TItem="string" Label="Pick one"></MatAutocompleteList>
+
+<div>
+    <p>
+        <MatDatePicker @bind-Value="@Date1"></MatDatePicker>
+    </p>
+    <MatButton OnClick="@(_ => { Date1 = DateTime.Now; })">Now</MatButton>
+    <MatButton OnClick="@(_ => { Date1 = null; })">Empty</MatButton>
+
+    <span>@(Date1.HasValue ? Date1.Value.ToLocalTime().ToString() : "")</span>
+</div>
+
+@code
+{
+    public DateTime? Date1 { get; set; } = DateTime.Now.AddDays(-10);
+
+    string[] options = new[]
+    {
+        "One",
+        "Two",
+        "Three"
+    };
+
+    public decimal Val
+    {
+        get => _val;
+        set
+        {
+            _val = value;
+            this.StateHasChanged();
+            Console.WriteLine($"_val = {_val}!!!");
+        }
+    }
+
+    private decimal _val = 0;
+}
+
