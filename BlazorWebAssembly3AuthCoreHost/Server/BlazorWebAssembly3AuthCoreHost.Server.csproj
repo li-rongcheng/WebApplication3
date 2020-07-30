@@ -24,10 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Watch Include="..\**\*.razor" />
-    <Watch Include="..\**\*.scss" />
-    <Watch Include="..\**\*.cs" />
-    <Watch Remove="..\**\obj\**\*.cs" />
+    <Watch Include="..\Client\**\*.razor" />
   </ItemGroup>
 
 </Project>
