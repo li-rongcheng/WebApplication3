@@ -53,12 +53,14 @@ Demo:
 - Depends on: RazorClassLib1, RazorClassLib2
 
 Demo:
-  - Use Areas in RCL even if razor pages enabled (which conflicts with native areas routing)
+  - Use Areas in RCL even if razor pages enabled (which conflicts with native
+    areas routing), demo: https://localhost:5001/myfeature/page1
+  - Use razor component in RCL, demo: https://localhost:5001/counter
   - Integrate razor pages with MVC
   - Integrate server side blazor (razor component) for razor pages and MVC
     - See: [Integrate ASP.NET Core Razor components into Razor Pages and MVC apps | Microsoft Docs](https://docs.microsoft.com/en-us/aspnet/core/blazor/integrate-components?view=aspnetcore-3.1)
   - REST API doc using Swashbuckle,
-    - See: [Get started with Swashbuckle and ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.1&tabs=visual-studio)
+    - Demo: [Get started with Swashbuckle and ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.1&tabs=visual-studio)
     - Visit: https://localhost:5001/swagger
 
 ### WebApplication3 (.net core 2.2)
