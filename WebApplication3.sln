@@ -38,7 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorWebAssembly3AuthCoreH
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssembply2PWA", "BlazorWebAssembply2PWA\BlazorWebAssembply2PWA.csproj", "{16785DDC-B805-4D8A-8ED5-BCD4D5426234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp2", "BlazorApp2\BlazorApp2.csproj", "{8BBF85A1-BC51-4BF5-BA8C-77D8ADE975B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp2", "BlazorApp2\BlazorApp2.csproj", "{8BBF85A1-BC51-4BF5-BA8C-77D8ADE975B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
