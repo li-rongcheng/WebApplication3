@@ -98,6 +98,9 @@ Demo:
     - If @page does not specify anything, the routing will follow the file path
       under the "Pages" folder, i.e. "Pages/Path1/Page2.cshtml" will be mapped
       to https://localhost:5001/path1/page2
+  - Integrate with Vue.js
+    - Source: `\WebApp3RazorPages\Pages\Page1.cshtml`
+    - Demo: https://localhost:5001/page1
 
 ## WebAssembly Projects
 
