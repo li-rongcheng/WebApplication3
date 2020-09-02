@@ -11,10 +11,20 @@
 <div id="app">
     <p>{{ foo }}</p>
     <!-- this will no longer update `foo`! -->
-    <button v-on:click="foo += 1">Change it</button>
+    <button v-on:click="foo += 5">Change it</button>
 </div>
 
 <hr />
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 <script src="~/js/vue_app.js" asp-append-version="true"></script>
+<script>
+    // or use the external js file (the one comment out above)
+    //var vm = new Vue({
+    //    el: '#app',
+    //    data: {
+    //        foo: 455
+    //    },
+    //})
+</script>
