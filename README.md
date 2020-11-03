@@ -79,9 +79,8 @@ Demo:
 
 - Depends on: RazorClassLib1 (netstandard2.0)
 - Authentication (login), search "简单的硬编码登录例子"
-- MediatR, FluentValidation, see:
-  - MediatrController.cs, will output some error logging messages (just for demo)
-  - files in MediatrExperiment/
+- FluentValidation, see: DiController.cs
+- MVC global exception filter, see: CustomExceptionFilterAttribute.cs
 - Registering multiple impls to the same interface, see: `Experiments/DiMultiImpl.cs`
 - GraphQL Demo
   - Playground URL: https://localhost:5001/ui/playground
