@@ -18,6 +18,12 @@ Search [MCN] for all mcn noes
 
 ## App Projects
 
+### Net5WebApi
+
+- .net 5
+- Web API project
+- Enabled OpenAPI support when creating
+
 
 ### BlazorApp1 (.net core 3.0)
 
