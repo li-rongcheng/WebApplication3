@@ -24,6 +24,10 @@ Search [MCN] for all mcn noes
 - Web API project
 - Enabled OpenAPI support when creating
 
+Demo:
+
+- Microsoft.ReverseProxy (aka. YARP)
+- runtime restart service
 
 ### BlazorApp1 (.net core 3.0)
 
