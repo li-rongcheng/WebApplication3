@@ -44,23 +44,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net5", "Net5", "{50AB8A7E-1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5WebApi", "Net5WebApi\Net5WebApi.csproj", "{F98E61E9-1954-4433-AE4C-5B16036B9C1A}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Net5WebApiFsharp", "Net5WebApiFsharp\Net5WebApiFsharp.fsproj", "{F2ACF586-FED7-4704-8ED6-743EFF38C168}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Net5WebApiFsharp", "Net5WebApiFsharp\Net5WebApiFsharp.fsproj", "{F2ACF586-FED7-4704-8ED6-743EFF38C168}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Net5FsharpWorker", "Net5FsharpWorker\Net5FsharpWorker.fsproj", "{E3A9F176-4248-4F49-BE4B-CCA5F827290B}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Net5FsharpWorker", "Net5FsharpWorker\Net5FsharpWorker.fsproj", "{E3A9F176-4248-4F49-BE4B-CCA5F827290B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5Worker", "Net5Worker\Net5Worker.csproj", "{DDFAB023-2B4B-43BE-A957-46E0144DE6A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5Worker", "Net5Worker\Net5Worker.csproj", "{DDFAB023-2B4B-43BE-A957-46E0144DE6A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5BlazorServer", "Net5BlazorServer\Net5BlazorServer.csproj", "{A3D95E1E-1C24-434B-9811-C821B87D55FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5BlazorServer", "Net5BlazorServer\Net5BlazorServer.csproj", "{A3D95E1E-1C24-434B-9811-C821B87D55FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5BlazorClient", "Net5BlazorClient\Net5BlazorClient.csproj", "{4DE2E1AC-5890-408B-8308-9AA159557D2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5BlazorClient", "Net5BlazorClient\Net5BlazorClient.csproj", "{4DE2E1AC-5890-408B-8308-9AA159557D2C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net5_BlazorClient", "Net5_BlazorClient", "{CCAE83FB-E625-481D-8C7A-8CAF0BC7344C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5BlazorClientCoreHost.Server", "Net5BlazorClientCoreHost\Server\Net5BlazorClientCoreHost.Server.csproj", "{44836DD5-21A7-43D6-8E86-159C68724B7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5BlazorClientCoreHost.Server", "Net5BlazorClientCoreHost\Server\Net5BlazorClientCoreHost.Server.csproj", "{44836DD5-21A7-43D6-8E86-159C68724B7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5BlazorClientCoreHost.Client", "Net5BlazorClientCoreHost\Client\Net5BlazorClientCoreHost.Client.csproj", "{07BE9D6E-C059-498E-898F-6F602AA4F882}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5BlazorClientCoreHost.Client", "Net5BlazorClientCoreHost\Client\Net5BlazorClientCoreHost.Client.csproj", "{07BE9D6E-C059-498E-898F-6F602AA4F882}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5BlazorClientCoreHost.Shared", "Net5BlazorClientCoreHost\Shared\Net5BlazorClientCoreHost.Shared.csproj", "{B1D31517-0CED-44EB-BCAE-6F0466C2AC5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5BlazorClientCoreHost.Shared", "Net5BlazorClientCoreHost\Shared\Net5BlazorClientCoreHost.Shared.csproj", "{B1D31517-0CED-44EB-BCAE-6F0466C2AC5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5WebApi.Cli", "Net5WebApi.Cli\Net5WebApi.Cli.csproj", "{0DD1C3D5-F5E2-42BD-97A0-3557FCAE151B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs.External", "Libs.External", "{32DCD1EC-1386-46A1-AD2C-AB6542BD7FC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreCmd", "..\..\..\..\rp\git\CoreCmd\CoreCmd\CoreCmd.csproj", "{C366DBB9-4D20-4927-A0F6-64998422B457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5WebApi.Messages", "Net5WebApi.Messages\Net5WebApi.Messages.csproj", "{C5816396-1DA7-47D0-8282-546DEE159396}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,6 +160,18 @@ Global
 		{B1D31517-0CED-44EB-BCAE-6F0466C2AC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1D31517-0CED-44EB-BCAE-6F0466C2AC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1D31517-0CED-44EB-BCAE-6F0466C2AC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD1C3D5-F5E2-42BD-97A0-3557FCAE151B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD1C3D5-F5E2-42BD-97A0-3557FCAE151B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD1C3D5-F5E2-42BD-97A0-3557FCAE151B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD1C3D5-F5E2-42BD-97A0-3557FCAE151B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C366DBB9-4D20-4927-A0F6-64998422B457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C366DBB9-4D20-4927-A0F6-64998422B457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C366DBB9-4D20-4927-A0F6-64998422B457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C366DBB9-4D20-4927-A0F6-64998422B457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5816396-1DA7-47D0-8282-546DEE159396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5816396-1DA7-47D0-8282-546DEE159396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5816396-1DA7-47D0-8282-546DEE159396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5816396-1DA7-47D0-8282-546DEE159396}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -175,6 +195,9 @@ Global
 		{44836DD5-21A7-43D6-8E86-159C68724B7E} = {CCAE83FB-E625-481D-8C7A-8CAF0BC7344C}
 		{07BE9D6E-C059-498E-898F-6F602AA4F882} = {CCAE83FB-E625-481D-8C7A-8CAF0BC7344C}
 		{B1D31517-0CED-44EB-BCAE-6F0466C2AC5B} = {CCAE83FB-E625-481D-8C7A-8CAF0BC7344C}
+		{0DD1C3D5-F5E2-42BD-97A0-3557FCAE151B} = {50AB8A7E-134B-4F67-94F1-10B749C5D847}
+		{C366DBB9-4D20-4927-A0F6-64998422B457} = {32DCD1EC-1386-46A1-AD2C-AB6542BD7FC1}
+		{C5816396-1DA7-47D0-8282-546DEE159396} = {50AB8A7E-134B-4F67-94F1-10B749C5D847}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B3D3FEF-2859-4CDF-B812-E32BDEA14C80}
