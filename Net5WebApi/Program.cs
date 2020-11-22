@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Net5WebApi
@@ -13,7 +14,11 @@ namespace Net5WebApi
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            while(true)
+            {
+                CreateHostBuilder(args).Build().Run();
+                Console.WriteLine("\nRestarting.........................\n");
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

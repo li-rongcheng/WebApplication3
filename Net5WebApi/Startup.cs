@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Net5WebApi.YarpConfigs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,10 +33,11 @@ namespace Net5WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Net5WebApi", Version = "v1" });
             });
+            services.AddYarp();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IHostApplicationLifetime appLifetime)
         {
             if (env.IsDevelopment())
             {
@@ -53,6 +55,23 @@ namespace Net5WebApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseYarp();
+
+            appLifetime.ApplicationStarted.Register(() =>
+            {
+                Console.WriteLine("Moonglade started.");
+            });
+
+            appLifetime.ApplicationStopping.Register(() =>
+            {
+                Console.WriteLine("Moonglade is stopping...");
+            });
+
+            appLifetime.ApplicationStopped.Register(() =>
+            {
+                Console.WriteLine("Moonglade stopped.");
             });
         }
     }
