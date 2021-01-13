@@ -1,4 +1,4 @@
-Back to [parent README](../readme.md)
+Back to [parent README](../README.md)
 
 # WebApp3RazorPages (.net core 3.1)
 
