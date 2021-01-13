@@ -20,26 +20,11 @@ Search [MCN] for all mcn noes
 
 ### Net5WebApi/Net5WebApi
 
-- .net 5
-- Web API project
-- Enabled OpenAPI support when creating
-
-Demo:
-
-- Microsoft.ReverseProxy (aka. YARP)
-- runtime restart service
+See project [README](Net5WebApi/README.md)
 
 ### BlazorApps/BlazorApp1 (.net core 3.0)
 
-- Depends On: RazorClassLib2
-- Blazor server
-- Auth **NOT** enabled
-
-Demo:
-  - Internal razor component RLTestComponent
-  - External razor components in RCL project RazorClassLib2
-  - RazorClassLib2.Component2 parameters
-  - MatBlazor (server side)
+See project [README](BlazorApp1/README.md)
 
 ### BlazorApps/BlazorApp2 (.net core 3.1)
 
