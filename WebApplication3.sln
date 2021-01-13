@@ -35,6 +35,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssembly3AuthCoreHost.Shared", "BlazorWebAssembly3AuthCoreHost\Shared\BlazorWebAssembly3AuthCoreHost.Shared.csproj", "{B32DD4CC-A346-4442-A529-3200CFDEFF4F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorWebAssembly3AuthCoreHost", "BlazorWebAssembly3AuthCoreHost", "{E1CD3F64-8AFE-409A-9687-AC3FC00CC018}"
+	ProjectSection(SolutionItems) = preProject
+		BlazorWebAssembly3AuthCoreHost\README.md = BlazorWebAssembly3AuthCoreHost\README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssembply2PWA", "BlazorWebAssembply2PWA\BlazorWebAssembply2PWA.csproj", "{16785DDC-B805-4D8A-8ED5-BCD4D5426234}"
 EndProject
@@ -62,13 +65,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5BlazorClientCoreHost.Cl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5BlazorClientCoreHost.Shared", "Net5BlazorClientCoreHost\Shared\Net5BlazorClientCoreHost.Shared.csproj", "{B1D31517-0CED-44EB-BCAE-6F0466C2AC5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5WebApi.Cli", "Net5WebApi.Cli\Net5WebApi.Cli.csproj", "{0DD1C3D5-F5E2-42BD-97A0-3557FCAE151B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5WebApi.Cli", "Net5WebApi.Cli\Net5WebApi.Cli.csproj", "{0DD1C3D5-F5E2-42BD-97A0-3557FCAE151B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs.External", "Libs.External", "{32DCD1EC-1386-46A1-AD2C-AB6542BD7FC1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreCmd", "..\..\..\..\rp\git\CoreCmd\CoreCmd\CoreCmd.csproj", "{C366DBB9-4D20-4927-A0F6-64998422B457}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5WebApi.Messages", "Net5WebApi.Messages\Net5WebApi.Messages.csproj", "{C5816396-1DA7-47D0-8282-546DEE159396}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5WebApi.Messages", "Net5WebApi.Messages\Net5WebApi.Messages.csproj", "{C5816396-1DA7-47D0-8282-546DEE159396}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net5WebApi", "Net5WebApi", "{950FF790-98FB-4283-B0A0-0A04D9F5561F}"
 EndProject
