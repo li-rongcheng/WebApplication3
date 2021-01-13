@@ -74,32 +74,18 @@ See project [README](WebApp3RazorPages/README.md)
 
 ### BlazorAssembly/BlazorWebAssembly3AuthCoreHost
 
-Blazor WebAssembly app with:
-- Asp.net core host enabled (so there are 3 sub-projects for client, server and shared)
-- PWA & Auth disabled
-
-Demo:
-- MatBlazor (client side)
+See project [README](BlazorWebAssembly3AuthCoreHost/README.md)
 
 ### BlazorAssembly/BlazorWebAssembply2PWA
 
-Blazor WebAssembly app with:
-- PWA enabled
-- Auth & Asp.net core host disabled
-
-No demo applied
+See project [README](BlazorWebAssembply2PWA/README.md)
 
 ## Lib Projects
 
 ### Libs/RazorClassLib1 (netstandard2.0, pages)
 
-- Based on razor langage 3.0 of .net core 3.0
-- Demo: Areas in RCL
-- Referred by: WebApplication3 & WebApp2
+See project [README](RazorClassLib1/README.md)
 
 ### Libs/RazorClassLib2 (netstandard2.0, blazor)
 
-- Based on razor langage 3.0 of .net core 3.0
-- demo: blazor (razor component)
-- Referred By: WebApp2, WebApp3RazorPages, BlazorApp1
-
+See project [README](RazorClassLib2/README.md)
