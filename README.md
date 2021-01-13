@@ -18,7 +18,7 @@ Search [MCN] for all mcn noes
 
 ## App Projects
 
-### Net5WebApi
+### Net5WebApi/Net5WebApi
 
 - .net 5
 - Web API project
@@ -29,12 +29,11 @@ Demo:
 - Microsoft.ReverseProxy (aka. YARP)
 - runtime restart service
 
-### BlazorApp1 (.net core 3.0)
+### BlazorApps/BlazorApp1 (.net core 3.0)
 
 - Depends On: RazorClassLib2
 - Blazor server
 - Auth **NOT** enabled
-
 
 Demo:
   - Internal razor component RLTestComponent
@@ -42,7 +41,7 @@ Demo:
   - RazorClassLib2.Component2 parameters
   - MatBlazor (server side)
 
-### BlazorApp2 (.net core 3.1)
+### BlazorApps/BlazorApp2 (.net core 3.1)
 
 Created on 2020-07-29, newer than BlazorApp1, for comparing with BlazorApp1,
 which uses old blazor app template by vs2019
@@ -53,7 +52,7 @@ Project setting:
 
 - Auth enabled
 
-### WebApp1 (.net core 3.0)
+### WebApp1 (.net core 3.1)
 
 Demo:
 - Areas routing: /RLTestArea
@@ -73,7 +72,7 @@ See project [README](WebApp3RazorPages/README.md)
 
 ## WebAssembly Projects
 
-### BlazorWebAssembly3AuthCoreHost
+### BlazorAssembly/BlazorWebAssembly3AuthCoreHost
 
 Blazor WebAssembly app with:
 - Asp.net core host enabled (so there are 3 sub-projects for client, server and shared)
@@ -82,7 +81,7 @@ Blazor WebAssembly app with:
 Demo:
 - MatBlazor (client side)
 
-### BlazorWebAssembply2PWA
+### BlazorAssembly/BlazorWebAssembply2PWA
 
 Blazor WebAssembly app with:
 - PWA enabled
@@ -92,13 +91,13 @@ No demo applied
 
 ## Lib Projects
 
-### RazorClassLib1 (netstandard2.0, pages)
+### Libs/RazorClassLib1 (netstandard2.0, pages)
 
 - Based on razor langage 3.0 of .net core 3.0
 - Demo: Areas in RCL
 - Referred by: WebApplication3 & WebApp2
 
-### RazorClassLib2 (netstandard2.0, blazor)
+### Libs/RazorClassLib2 (netstandard2.0, blazor)
 
 - Based on razor langage 3.0 of .net core 3.0
 - demo: blazor (razor component)
