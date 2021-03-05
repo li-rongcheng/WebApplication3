@@ -38,4 +38,32 @@ namespace Net5WebApi.Cli.Commands
             }
         }
     }
+
+        
+    interface IWeatherApi
+    {
+        [Get("/api/weatherforecast/blow-me-up")]
+        Task BlowMeUp();
+    }
+    class AppCommand
+    {
+        public async Task Restart()
+        {
+            try
+            {
+                var httpClient = new HttpClient(
+                    new HttpClientHandler { ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true }
+                )
+                { BaseAddress = new Uri("https://localhost:5001") };
+
+                await RestService.For<IWeatherApi>(httpClient).BlowMeUp();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException?.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+        }
+    }
 }

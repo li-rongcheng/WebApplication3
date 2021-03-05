@@ -20,6 +20,7 @@ namespace Net5WebApi.YarpConfigs
 
         public void Update(IReadOnlyList<ProxyRoute> routes, IReadOnlyList<Cluster> clusters)
         {
+            Console.WriteLine("Removed oldConfig");
             var oldConfig = _config;
             _config = new InMemoryConfig(routes, clusters);
             oldConfig.SignalChange();

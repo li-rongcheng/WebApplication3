@@ -18,6 +18,7 @@ namespace Net5WebApi
             {
                 CreateHostBuilder(args).Build().Run();
                 Console.WriteLine("\nRestarting.........................\n");
+                Thread.Sleep(1000); // give time to press a 2nd ctrl+c to quit program completely
             }
         }
 
