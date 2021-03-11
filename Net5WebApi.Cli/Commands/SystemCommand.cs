@@ -1,24 +1,21 @@
-﻿using Net5WebApi.Messages;
+﻿using CoreCmd.Attributes;
 using Refit;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Net5WebApi.Cli.Commands
 {
-    [Headers("User-Agent: .NET Foundation Repository Reporter")]    // must have, otherwise will return 403 forbidden
-    interface IYarpApi
+    interface IWeatherApi
     {
-        [Post("/api/yarp")]
-        Task DoAsync([Body] Value value);
+        [Post("/api/system/reset")]
+        Task Reset();
     }
 
-    class YarpCommand
+    [Alias("sys")]
+    class SystemCommand
     {
-        public async Task Test(string address)
+        public async Task Reset()
         {
             try
             {
@@ -27,8 +24,7 @@ namespace Net5WebApi.Cli.Commands
                 )
                 { BaseAddress = new Uri("https://localhost:5001") };
 
-                var yarp = RestService.For<IYarpApi>(httpClient);
-                await yarp.DoAsync(new Value { value = address });
+                await RestService.For<IWeatherApi>(httpClient).Reset();
             }
             catch (Exception ex)
             {

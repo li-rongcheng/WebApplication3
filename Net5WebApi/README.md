@@ -27,7 +27,7 @@ Demo:
   Steps (approach 2):
 
   - Launch this project by `dotnet run` or `dotnet watch run`
-  - From Net5WebApi.Cli project root, execute: `do app restart`
+  - From Net5WebApi.Cli project root, execute: `do sys reset`
 
   Step (approach 3):
 

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -19,19 +18,9 @@ namespace Net5WebApi.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        IHostApplicationLifetime _appLifetime;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IHostApplicationLifetime appLifetime)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
-            _appLifetime = appLifetime;
-        }
-
-        [HttpGet("blow-me-up")]
-        public IActionResult BlowMeUp()
-        {
-            _appLifetime.StopApplication();
-            return new EmptyResult();
         }
 
         [HttpGet]
