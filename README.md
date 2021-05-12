@@ -42,5 +42,4 @@ Search [MCN] for all mcn noes
 ## Blazor Client (WebAssembly) Projects
 
 - (folder) [BlazorAssembly/BlazorWebAssembly3AuthCoreHost](BlazorWebAssembly3AuthCoreHost/README.md)
-- [BlazorAssembly/BlazorWebAssembply2PWA](BlazorWebAssembply2PWA/README.md)
 
