@@ -37,7 +37,6 @@ Search [MCN] for all mcn noes
 ### Blazor Server Projects
 
 - [BlazorApps/BlazorApp1](BlazorApp1/README.md)
-- [BlazorApps/BlazorApp2](BlazorApp2/README.md)
 
 ## Blazor Client (WebAssembly) Projects
 
