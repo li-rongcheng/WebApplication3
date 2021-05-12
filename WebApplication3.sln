@@ -8,9 +8,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorClassLib1", "RazorClassLib1\RazorClassLib1.csproj", "{A7BA835D-B442-45E9-9011-CA4B4678BDB0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9F4614B-84D0-4945-BEAE-C0FD78222A2D}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp1", "WebApp1\WebApp1.csproj", "{6881E41D-5D92-4002-B448-F53A860A1425}"
 EndProject
@@ -25,8 +22,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{967E21B5-4683-465A-B4A7-85D2E3DD110A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorApps", "BlazorApps", "{D367E39B-42C3-4BF1-8B77-1DFA3577960F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorAssembly", "BlazorAssembly", "{4E5DDC67-6C60-46E3-9E8F-15AE76AE9EA3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssembly3AuthCoreHost.Server", "BlazorWebAssembly3AuthCoreHost\Server\BlazorWebAssembly3AuthCoreHost.Server.csproj", "{C6D5149C-05CA-4903-9F34-B67ABA27430B}"
 EndProject
@@ -50,6 +45,27 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5WebApi.Messages", "Net5WebApi.Messages\Net5WebApi.Messages.csproj", "{C5816396-1DA7-47D0-8282-546DEE159396}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net5WebApi", "Net5WebApi", "{950FF790-98FB-4283-B0A0-0A04D9F5561F}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "docs", "docs\", "{7D23C81F-BE6D-41D2-B7F0-0AAEBD0C4101}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52655"
+		Debug.AspNetCompiler.PhysicalPath = "docs\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52655\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52655"
+		Release.AspNetCompiler.PhysicalPath = "docs\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52655\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52655"
+		SlnRelativePath = "docs\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +133,10 @@ Global
 		{C5816396-1DA7-47D0-8282-546DEE159396}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5816396-1DA7-47D0-8282-546DEE159396}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5816396-1DA7-47D0-8282-546DEE159396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D23C81F-BE6D-41D2-B7F0-0AAEBD0C4101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D23C81F-BE6D-41D2-B7F0-0AAEBD0C4101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D23C81F-BE6D-41D2-B7F0-0AAEBD0C4101}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D23C81F-BE6D-41D2-B7F0-0AAEBD0C4101}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,7 +148,7 @@ Global
 		{C6D5149C-05CA-4903-9F34-B67ABA27430B} = {E1CD3F64-8AFE-409A-9687-AC3FC00CC018}
 		{085DC9FC-764D-457C-9864-F5BE06005A6F} = {E1CD3F64-8AFE-409A-9687-AC3FC00CC018}
 		{B32DD4CC-A346-4442-A529-3200CFDEFF4F} = {E1CD3F64-8AFE-409A-9687-AC3FC00CC018}
-		{E1CD3F64-8AFE-409A-9687-AC3FC00CC018} = {4E5DDC67-6C60-46E3-9E8F-15AE76AE9EA3}
+		{E1CD3F64-8AFE-409A-9687-AC3FC00CC018} = {D367E39B-42C3-4BF1-8B77-1DFA3577960F}
 		{F98E61E9-1954-4433-AE4C-5B16036B9C1A} = {950FF790-98FB-4283-B0A0-0A04D9F5561F}
 		{A3D95E1E-1C24-434B-9811-C821B87D55FE} = {D367E39B-42C3-4BF1-8B77-1DFA3577960F}
 		{4DE2E1AC-5890-408B-8308-9AA159557D2C} = {D367E39B-42C3-4BF1-8B77-1DFA3577960F}
