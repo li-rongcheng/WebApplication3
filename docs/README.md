@@ -1,4 +1,4 @@
-# WebApplication3 Solution
+# About Solution
 
 ## Overall
 
@@ -16,7 +16,3 @@
   dotnet-ef migrations add <migration-name>
   dotnet-ef database update
   ```
-
-## Demo Projects
-
-

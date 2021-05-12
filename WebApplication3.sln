@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication3", "WebAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorClassLib1", "RazorClassLib1\RazorClassLib1.csproj", "{A7BA835D-B442-45E9-9011-CA4B4678BDB0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9F4614B-84D0-4945-BEAE-C0FD78222A2D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp1", "WebApp1\WebApp1.csproj", "{6881E41D-5D92-4002-B448-F53A860A1425}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorClassLib2", "RazorClassLib2\RazorClassLib2.csproj", "{4C4A5B44-9A72-4026-B993-D3FB36271A43}"
