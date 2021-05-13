@@ -9,9 +9,9 @@ namespace WebApp3RazorPages.Pages.Path1
 {
     public class Page2Model : PageModel
     {
-        public void OnGet()
+        public void OnGet(string param1, string param2)
         {
-
+            Console.WriteLine($"{nameof(Page2Model)} :> param1 = {param1}; param2 = {param2}");
         }
     }
 }
