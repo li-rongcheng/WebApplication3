@@ -11,5 +11,4 @@
   - [Net5WebApi](Net5WebApi.md)
 - **Blazor Server Projects**
   - [BlazorApp1](BlazorApp1.md)
-  - [Net5BlazorServer](Net5BlazorServer.md)
   - [BlazorWebAssembly3AuthCoreHost](BlazorWebAssembly3AuthCoreHost.md)
