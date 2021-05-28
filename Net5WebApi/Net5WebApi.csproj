@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Net5WebApi.Jwt\Net5WebApi.Jwt.csproj" />
     <ProjectReference Include="..\Net5WebApi.Messages\Net5WebApi.Messages.csproj" />
   </ItemGroup>
 
