@@ -4,9 +4,9 @@ using System;
 
 namespace Net5WebApi.Data
 {
-    public class ApiDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
-        public ApiDbContext(DbContextOptions<ApiDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
         {
         }

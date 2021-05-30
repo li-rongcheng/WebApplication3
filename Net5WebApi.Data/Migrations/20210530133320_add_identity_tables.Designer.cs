@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Net5WebApi.Data.Migrations
 {
-    [DbContext(typeof(ApiDbContext))]
-    [Migration("20210528165923_add_identity_tables")]
+    [DbContext(typeof(ApplicationDbContext))]
+    [Migration("20210530133320_add_identity_tables")]
     partial class add_identity_tables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
