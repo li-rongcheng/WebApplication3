@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Net5WebApi.Data;
+using Net5WebApi.Jwt;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -21,12 +22,18 @@ namespace Net5WebApi.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IConfiguration _config;
+        private readonly JwtConfig _jwtConfig;
 
-        public TokenController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IConfiguration config)
-        {
+        public TokenController(
+            ApplicationDbContext context
+            , UserManager<IdentityUser> userManager
+            , IConfiguration config
+            , JwtConfig jwtConfig
+        ){
             _context = context;
             _userManager = userManager;
             _config = config;
+            _jwtConfig = jwtConfig;
         }
 
         [Route("/token")]
@@ -72,15 +79,13 @@ namespace Net5WebApi.Controllers
                 claims.Add(new Claim(ClaimTypes.Role, role.Name));
             }
 
-            string key = _config.GetValue<string>("Secrets:SecurityKey");
-
             var token = new JwtSecurityToken
                         (
                             new JwtHeader
                             (
                                 new SigningCredentials
                                 (
-                                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
+                                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtConfig.Secret)),
                                     SecurityAlgorithms.HmacSha256
                                 )
                             ),
