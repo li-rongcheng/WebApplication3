@@ -23,17 +23,20 @@ namespace Net5WebApi.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IConfiguration _config;
         private readonly JwtConfig _jwtConfig;
+        private readonly JwtGenerator _jwtGenerator;
 
         public TokenController(
             ApplicationDbContext context
             , UserManager<IdentityUser> userManager
             , IConfiguration config
             , JwtConfig jwtConfig
+            , JwtGenerator jwtGenerator
         ){
             _context = context;
             _userManager = userManager;
             _config = config;
             _jwtConfig = jwtConfig;
+            _jwtGenerator = jwtGenerator;
         }
 
         [Route("/token")]
@@ -42,7 +45,7 @@ namespace Net5WebApi.Controllers
         {
             if (await IsValidUsernameAndPassword(username, password))
             {
-                return new ObjectResult(await GenerateToken(username));
+                return new ObjectResult(await _jwtGenerator.GenerateJwtToken(username));
             }
             else
             {
@@ -55,50 +58,6 @@ namespace Net5WebApi.Controllers
 
             var user = await _userManager.FindByEmailAsync(username);
             return await _userManager.CheckPasswordAsync(user, password);
-        }
-
-        private async Task<dynamic> GenerateToken(string username)
-        {
-            var user = await _userManager.FindByEmailAsync(username);
-
-            var roles = from userRole in _context.UserRoles
-                        join role in _context.Roles on userRole.RoleId equals role.Id
-                        where userRole.UserId == user.Id
-                        select new { userRole.UserId, userRole.RoleId, role.Name };
-
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, username ),
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(JwtRegisteredClaimNames.Nbf, new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds().ToString()),
-                new Claim(JwtRegisteredClaimNames.Exp, new DateTimeOffset(DateTime.Now.AddDays(1)).ToUnixTimeSeconds().ToString())
-            };
-
-            foreach (var role in roles)
-            {
-                claims.Add(new Claim(ClaimTypes.Role, role.Name));
-            }
-
-            var token = new JwtSecurityToken
-                        (
-                            new JwtHeader
-                            (
-                                new SigningCredentials
-                                (
-                                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtConfig.Secret)),
-                                    SecurityAlgorithms.HmacSha256
-                                )
-                            ),
-                            new JwtPayload(claims)
-                        );
-
-            var output = new
-            {
-                Access_Token = new JwtSecurityTokenHandler().WriteToken(token),
-                UserName = username
-            };
-
-            return output;
         }
     }
 }

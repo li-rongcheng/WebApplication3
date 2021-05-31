@@ -15,8 +15,8 @@ namespace Net5WebApi.Jwt
         // used in ConfigureServices()
         public static void AddJwt(this IServiceCollection services, IConfiguration Configuration)
         {
+            services.AddTransient<JwtGenerator>();
             services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
-
             services
                 .AddAuthentication(options => {
                     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
