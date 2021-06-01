@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Net5WebApi.Jwt
 {
+    /// <summary>
+    /// The 2 GenerateJwtToken() should have the same effect
+    /// </summary>
     public class JwtGenerator
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -24,7 +27,7 @@ namespace Net5WebApi.Jwt
             _jwtConfig = jwtConfig;
         }
 
-        // implementation 1 (recommended)
+        // implementation 1: use SecurityTokenDescriptor
         public string GenerateJwtToken(IdentityUser user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
@@ -56,7 +59,7 @@ namespace Net5WebApi.Jwt
             return jwtToken;
         }
 
-        // implementation 2
+        // implementation 2: use JwtHeader and JwtPayload
         public async Task<dynamic> GenerateJwtToken(string username)
         {
             var user = await _userManager.FindByEmailAsync(username);
