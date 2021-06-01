@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Net5WebApi.Data;
 using Net5WebApi.Jwt;
@@ -29,23 +30,23 @@ namespace Net5WebApi.Controllers
             ApplicationDbContext context
             , UserManager<IdentityUser> userManager
             , IConfiguration config
-            , JwtConfig jwtConfig
+            , IOptions<JwtConfig> jwtConfig
             , JwtGenerator jwtGenerator
         ){
             _context = context;
             _userManager = userManager;
             _config = config;
-            _jwtConfig = jwtConfig;
+            _jwtConfig = jwtConfig.Value;
             _jwtGenerator = jwtGenerator;
         }
 
         [Route("/token")]
         [HttpPost]
-        public async Task<IActionResult> Create(string username, string password, string grant_type)
+        public async Task<IActionResult> TokenPost(string email, string password, string grant_type)
         {
-            if (await IsValidUsernameAndPassword(username, password))
+            if (await IsValidUsernameAndPassword(email, password))
             {
-                return new ObjectResult(await _jwtGenerator.GenerateJwtToken(username));
+                return new ObjectResult(await _jwtGenerator.GenerateJwtToken(email));
             }
             else
             {
@@ -53,10 +54,10 @@ namespace Net5WebApi.Controllers
             }
         }
 
-        private async Task<bool> IsValidUsernameAndPassword(string username, string password)
+        private async Task<bool> IsValidUsernameAndPassword(string email, string password)
         {
 
-            var user = await _userManager.FindByEmailAsync(username);
+            var user = await _userManager.FindByEmailAsync(email);
             return await _userManager.CheckPasswordAsync(user, password);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Net5WebApi.Jwt;
 using System;
@@ -51,10 +52,10 @@ namespace Net5WebApi.Controllers
         private readonly JwtConfig _jwtConfig;
         private readonly JwtGenerator _jwtGenerator;
 
-        public UserController(UserManager<IdentityUser> userManager, JwtConfig jwtConfig, JwtGenerator jwtGenerator)
+        public UserController(UserManager<IdentityUser> userManager, IOptions<JwtConfig> jwtConfig, JwtGenerator jwtGenerator)
         {
             _userManager = userManager;
-            _jwtConfig = jwtConfig;
+            _jwtConfig = jwtConfig.Value;
             _jwtGenerator = jwtGenerator;
         }
 

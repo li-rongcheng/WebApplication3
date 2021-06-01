@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Net5WebApi.Data;
 using System;
@@ -20,11 +21,11 @@ namespace Net5WebApi.Jwt
         private readonly ApplicationDbContext _context;
         private readonly JwtConfig _jwtConfig;
 
-        public JwtGenerator(UserManager<IdentityUser> userManager, ApplicationDbContext context, JwtConfig jwtConfig)
+        public JwtGenerator(UserManager<IdentityUser> userManager, ApplicationDbContext context, IOptions<JwtConfig> jwtConfig)
         {
             _userManager = userManager;
             _context = context;
-            _jwtConfig = jwtConfig;
+            _jwtConfig = jwtConfig.Value;
         }
 
         // implementation 1: use SecurityTokenDescriptor
