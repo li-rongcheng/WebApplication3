@@ -16,6 +16,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GraphQLDemo1.GraphQL;
+using Autofac;
+using Microsoft.AspNetCore.Http;
+using GraphQLDemo1.Data.Repositories;
+using GraphQL.SystemTextJson;
 
 namespace GraphQLDemo1
 {
@@ -27,6 +32,16 @@ namespace GraphQLDemo1
         }
 
         public IConfiguration Configuration { get; }
+
+        // [MCN]
+        public virtual void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>().SingleInstance();
+            builder.RegisterType<MovieRepository>().As<IMovieRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<DocumentWriter>().AsImplementedInterfaces().SingleInstance();
+            builder.RegisterType<QueryObject>().AsSelf().SingleInstance();
+            builder.RegisterType<MovieReviewSchema>().AsSelf().SingleInstance();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -83,6 +98,7 @@ namespace GraphQLDemo1
             });
 
             app.UseGraphQLAltair(path: "/");        // [MCN]
+            app.UseGraphQL<MovieReviewSchema>();    // [MCN]
         }
     }
 }
