@@ -1,5 +1,5 @@
 using Autofac.Extensions.DependencyInjection;
-using GraphQLWorkerService1.Data.Models;
+using GraphQLWorkerService1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

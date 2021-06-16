@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GraphQLWorkerService1.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GraphQLWorkerService1.Data.Models
+namespace GraphQLWorkerService1.Data
 {
     public class MovieContext : DbContext
     {
