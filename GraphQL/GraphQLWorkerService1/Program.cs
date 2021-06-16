@@ -1,5 +1,5 @@
 using Autofac.Extensions.DependencyInjection;
-using GraphQLWorkerService1.Data;
+using GraphQLDemo1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GraphQLWorkerService1
+namespace GraphQLDemo1
 {
     public class Program
     {

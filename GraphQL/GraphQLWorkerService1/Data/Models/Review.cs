@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GraphQLWorkerService1.Data.Models
+namespace GraphQLDemo1.Data.Models
 {
     public class Review
     {

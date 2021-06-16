@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GraphQLWorkerService1.Data.Models
+namespace GraphQLDemo1.Data.Models
 {
     public class Movie
     {
