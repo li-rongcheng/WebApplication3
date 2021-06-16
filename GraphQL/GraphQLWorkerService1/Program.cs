@@ -1,4 +1,6 @@
 using Autofac.Extensions.DependencyInjection;
+using GraphQLWorkerService1.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -20,6 +22,9 @@ namespace GraphQLWorkerService1
                 .UseServiceProviderFactory(new AutofacServiceProviderFactory()) // need to install package: Autofac.Extensions.DependencyInjection
                 .ConfigureServices((hostContext, services) =>
                 {
+                    services.AddEntityFrameworkInMemoryDatabase()
+                            .AddDbContext<MovieContext>(context => { context.UseInMemoryDatabase("MovieDb"); });
+
                     services.AddHostedService<Worker>();
                 });
     }
