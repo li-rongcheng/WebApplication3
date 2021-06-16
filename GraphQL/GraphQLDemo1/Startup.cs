@@ -47,8 +47,7 @@ namespace GraphQLDemo1
         public void ConfigureServices(IServiceCollection services)
         {
             // [MCN] begin
-            services.AddEntityFrameworkInMemoryDatabase()
-                    .AddDbContext<MovieContext>(context => { context.UseInMemoryDatabase("MovieDb"); });
+            services.AddDbContext<MovieContext>(options => options.UseInMemoryDatabase("MovieDb") );
 
             services
                 .AddGraphQL(
