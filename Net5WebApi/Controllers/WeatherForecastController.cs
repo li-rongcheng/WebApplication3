@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Net5WebApi.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
     public class WeatherForecastController : ControllerBase
