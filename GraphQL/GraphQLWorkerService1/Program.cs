@@ -1,3 +1,4 @@
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -16,6 +17,7 @@ namespace GraphQLWorkerService1
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory()) // need to install package: Autofac.Extensions.DependencyInjection
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>();
