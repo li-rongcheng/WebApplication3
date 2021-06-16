@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Net5WebApi.Jwt;
 using Net5WebApi.YarpConfigs;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace Net5WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddJwt(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -50,6 +51,7 @@ namespace Net5WebApi
 
             app.UseRouting();
 
+            app.UseJwt();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
