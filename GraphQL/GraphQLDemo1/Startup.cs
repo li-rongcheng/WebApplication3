@@ -1,4 +1,7 @@
+using GraphQL.Server;
+using GraphQL.Server.Ui.Altair;
 using GraphQLDemo1.Data;
+using GraphQL.Server.Transports.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,8 +31,28 @@ namespace GraphQLDemo1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // [MCN] begin
             services.AddEntityFrameworkInMemoryDatabase()
                     .AddDbContext<MovieContext>(context => { context.UseInMemoryDatabase("MovieDb"); });
+
+            services
+                .AddGraphQL(
+                    (options, provider) =>
+                    {
+                        // Load GraphQL Server configurations
+                        var graphQLOptions = Configuration.GetSection("GraphQL")
+                                                          .Get<GraphQLOptions>();
+                        options.ComplexityConfiguration = graphQLOptions.ComplexityConfiguration;
+                        options.EnableMetrics = graphQLOptions.EnableMetrics;
+
+                        // Log errors
+                        var logger = provider.GetRequiredService<ILogger<Startup>>();
+                        options.UnhandledExceptionDelegate = ctx => logger.LogError("{Error} occurred", ctx.OriginalException.Message);
+                    })
+                .AddGraphTypes() // Adds all graph types in the current assembly with a singleton lifetime.
+                .AddDataLoader() // Add GraphQL data loader to reduce the number of calls to our repository. https://graphql-dotnet.github.io/docs/guides/dataloader/
+                .AddSystemTextJson();   // require: dotnet add package GraphQL.Server.Transports.AspNetCore.SystemTextJson
+            // [MCN] end
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -58,6 +81,8 @@ namespace GraphQLDemo1
             {
                 endpoints.MapControllers();
             });
+
+            app.UseGraphQLAltair(path: "/");        // [MCN]
         }
     }
 }
