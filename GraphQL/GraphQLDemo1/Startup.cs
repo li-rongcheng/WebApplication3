@@ -57,8 +57,8 @@ namespace GraphQLDemo1
                         // Load GraphQL Server configurations
                         var graphQLOptions = Configuration.GetSection("GraphQL")
                                                           .Get<GraphQLOptions>();
-                        options.ComplexityConfiguration = graphQLOptions.ComplexityConfiguration;
-                        options.EnableMetrics = graphQLOptions.EnableMetrics;
+                        //options.ComplexityConfiguration = graphQLOptions.ComplexityConfiguration;
+                        //options.EnableMetrics = graphQLOptions.EnableMetrics;
 
                         // Log errors
                         var logger = provider.GetRequiredService<ILogger<Startup>>();
