@@ -12,3 +12,5 @@
 - **Blazor Server Projects**
   - [BlazorApp1](BlazorApp1.md)
   - [BlazorWebAssembly3AuthCoreHost](BlazorWebAssembly3AuthCoreHost.md)
+  **GraphQL Projects**
+  - [GraphQLDemo1 (.net5)](GraphQLDemo1.md)
