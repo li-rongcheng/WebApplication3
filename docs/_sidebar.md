@@ -14,3 +14,4 @@
   - [BlazorWebAssembly3AuthCoreHost](BlazorWebAssembly3AuthCoreHost.md)
   **GraphQL Projects**
   - [GraphQLDemo1](GraphQLDemo1.md)
+  - [GraphQLDemo2](GraphQLDemo2.md)
