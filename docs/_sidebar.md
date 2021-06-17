@@ -9,8 +9,8 @@
   - [RazorClassLib2](RazorClassLib2.md)
 - **.Net5 Projects**
   - [Net5WebApi](Net5WebApi.md)
-- **Blazor Server Projects**
+- **Blazor Projects**
   - [BlazorApp1](BlazorApp1.md)
   - [BlazorWebAssembly3AuthCoreHost](BlazorWebAssembly3AuthCoreHost.md)
   **GraphQL Projects**
-  - [GraphQLDemo1 (.net5)](GraphQLDemo1.md)
+  - [GraphQLDemo1](GraphQLDemo1.md)
