@@ -9,6 +9,8 @@ Back to [parent README](../README.md)
   > **About Blazor Client (WebAssembly):**
   >
   > As Blazor WebAssebmly projects are not well supported by VSCode, the relevant projects are removed.
+  > 
+  > Relevant notes: [2021_06_23__11_18_16]  ~ "aspnet core. view. blazor. _misc .mcn"
 
 - Auth **NOT** enabled
 
