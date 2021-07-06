@@ -41,7 +41,11 @@ Step (approach 3):
 
 Demo: authentication/authorization using JWT token
 
-Setups:
+**Remarks:**
+
+- Use postgresql docker image as database server
+
+**Setups:**
 
 - Install docker desktop, go to directory of `Net5WebApi\docker-compose`, then run:
   
