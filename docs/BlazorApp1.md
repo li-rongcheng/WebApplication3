@@ -1,6 +1,6 @@
 Back to [parent README](../README.md)
 
-# BlazorApp1 (.net core 3.0)
+# BlazorApp1 (.net core 5.0)
 
 - Depends On: RazorClassLib2
 
