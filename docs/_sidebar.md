@@ -11,6 +11,7 @@
   - [Net5WebApi](Net5WebApi.md)
 - **Blazor Projects**
   - [BlazorApp1](BlazorApp1.md)
+  - [BlazorServerTailwind](BlazorServerTailwind.md)
   **GraphQL Projects**
   - [GraphQLDemo1](GraphQLDemo1.md)
   - [GraphQLDemo2](GraphQLDemo2.md)
